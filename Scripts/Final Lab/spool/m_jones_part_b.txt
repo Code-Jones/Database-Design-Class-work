@@ -1,0 +1,83 @@
+SQL> 
+SQL> 
+SQL> drop table exam_appointment;
+drop table exam_appointment
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
+SQL> drop table exam_doctor;
+drop table exam_doctor
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
+SQL> drop table exam_patient;
+drop table exam_patient
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> create table exam_patient (
+  2  hcn varchar2(15),
+  3  firstname varchar2(20),
+  4  lastname varchar2(20),
+  5  phonenumber number(10) constraint exam_patient_phonenumber_nn not null,
+  6  constraint exam_patient_pk primary key (hcn));
+
+Table created.
+
+SQL> 
+SQL> create table exam_doctor (
+  2  providernumber number(6),
+  3  firstname varchar2(20),
+  4  lastname varchar2(20),
+  5  phonenumber number(10)
+  6  );
+
+Table created.
+
+SQL> 
+SQL> alter table exam_doctor
+  2  add constraint exam_doctor_pk primary key(providernumber);
+
+Table altered.
+
+SQL> 
+SQL> alter table exam_doctor
+  2  modify (phonenumber not null);
+
+Table altered.
+
+SQL> 
+SQL> 
+SQL> create table exam_appointment (
+  2  appointmentdatetime date,
+  3  hcn varchar2(15),
+  4  doctorname varchar2(20),
+  5  providernumber number(6),
+  6  charge number(8,2),
+  7  constraint exam_appt_pk primary key (appointmentdatetime, hcn, doctorname),
+  8  constraint exam_appt_patient_fk foreign key (hcn) references exam_patient (hcn),
+  9  constraint exam_appt_doctor_fk foreign key (providernumber) references exam_doctor(providernumber),
+ 10  constraint exam_appt_charge_ck check (charge > 0)
+ 11  );
+
+Table created.
+
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> spool off;

@@ -1,0 +1,114 @@
+SQL> 
+SQL> rem part a:
+SQL> 
+SQL> rem q1:
+SQL> 
+SQL> insert into cp_title values
+  2  ('ground day', 'Groundhog Day', 8, 'Bill Murray, Andie Macdowell', 102, '****');
+
+1 row created.
+
+SQL> 
+SQL> insert into cp_dvd values
+  2  (1001, 'ground day', 1, 'A');
+
+1 row created.
+
+SQL> 
+SQL> select film_title, dvd_number, rental_class
+  2  from cp_title join cp_dvd using (title_code)
+  3  where film_title like '%Groundhog%';
+
+FILM_TITLE                                                        DVD_NUMBER R  
+----------------------------------------------------------------- ---------- -  
+Groundhog Day                                                           1001 A  
+
+SQL> 
+SQL> 
+SQL> rem q2:
+SQL> 
+SQL> savepoint a;
+
+Savepoint created.
+
+SQL> 
+SQL> select * from cp_returns;
+
+DVD_NUMBER ACTUAL_DA                                                            
+---------- ---------                                                            
+       109 21-APR-20                                                            
+       103 14-APR-20                                                            
+       102 17-APR-20                                                            
+
+SQL> 
+SQL> delete from cp_returns;
+
+3 rows deleted.
+
+SQL> 
+SQL> select * from cp_returns;
+
+no rows selected
+
+SQL> 
+SQL> rollback to a;
+
+Rollback complete.
+
+SQL> 
+SQL> select * from cp_returns;
+
+DVD_NUMBER ACTUAL_DA                                                            
+---------- ---------                                                            
+       109 21-APR-20                                                            
+       103 14-APR-20                                                            
+       102 17-APR-20                                                            
+
+SQL> 
+SQL> rem q3:
+SQL> 
+SQL> select * from cp_price;
+
+R RATE_PER_DAY                                                                  
+- ------------                                                                  
+A         2.99                                                                  
+B         1.99                                                                  
+C          .99                                                                  
+
+SQL> 
+SQL> update cp_price
+  2  set rate_per_day = rate_per_day * 1.1
+  3  where rate_per_day is not null;
+
+3 rows updated.
+
+SQL> 
+SQL> /* old way
+SQL> update cp_price
+SQL> set rate_per_day = 3.29
+SQL> where rental_class = 'a';
+SQL> 
+SQL> update cp_price
+SQL> set rate_per_day = 2.19
+SQL> where rental_class = 'b';
+SQL> 
+SQL> update cp_price
+SQL> set rate_per_day = 1.01
+SQL> where rental_class = 'c';
+SQL> */
+SQL> 
+SQL> select * from cp_price;
+
+R RATE_PER_DAY                                                                  
+- ------------                                                                  
+A         3.29                                                                  
+B         2.19                                                                  
+C         1.09                                                                  
+
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> spool off
