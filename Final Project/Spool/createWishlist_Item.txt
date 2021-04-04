@@ -1,0 +1,117 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createWishlist_Item.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the Wishlist_item Table	     */
+SQL> 
+SQL> /*  not done. / select at the end*/
+SQL> 
+SQL> 
+SQL> create table wishlist_item (
+  2  customer_id			     number(5),
+  3  title_id				     number(5));
+
+Table created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20001','50006');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20002','50004');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20004','50001');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20005','50003');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20004','50008');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20003','50014');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20001','50016');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20002','50020');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20003','50015');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20003','50011');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20002','50011');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20001','50011');
+
+1 row created.
+
+SQL> 
+SQL> insert into wishlist_item (customer_id, title_id)
+  2  values ('20004','50011');
+
+1 row created.
+
+SQL> select * from Wishlist_Item;
+
+CUSTOMER_ID   TITLE_ID                                                                                                                                                                                                                                                                                      
+----------- ----------                                                                                                                                                                                                                                                                                      
+      20001      50006                                                                                                                                                                                                                                                                                      
+      20002      50004                                                                                                                                                                                                                                                                                      
+      20004      50001                                                                                                                                                                                                                                                                                      
+      20005      50003                                                                                                                                                                                                                                                                                      
+      20004      50008                                                                                                                                                                                                                                                                                      
+      20003      50014                                                                                                                                                                                                                                                                                      
+      20001      50016                                                                                                                                                                                                                                                                                      
+      20002      50020                                                                                                                                                                                                                                                                                      
+      20003      50015                                                                                                                                                                                                                                                                                      
+      20003      50011                                                                                                                                                                                                                                                                                      
+      20002      50011                                                                                                                                                                                                                                                                                      
+      20001      50011                                                                                                                                                                                                                                                                                      
+      20004      50011                                                                                                                                                                                                                                                                                      
+
+13 rows selected.
+
+SQL> spool off

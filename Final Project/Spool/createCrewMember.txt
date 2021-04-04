@@ -1,0 +1,65 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createCrewMember.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the CrewMember Table   */
+SQL> 
+SQL> /*  not done. select at the end*/
+SQL> 
+SQL> 
+SQL> create table CrewMember (
+  2  crew_mem_id		     number(5) GENERATED AS IDENTITY (START WITH 10001 INCREMENT BY 1),
+  3  fname			     varchar(15) constraint crewmember_fname_nn not null,
+  4  lname			     varchar(15) constraint crewmember_lname_nn not null,
+  5  position			     varchar(10) constraint crewmember_position_nn not null
+  6  constraint crewmember_position_ck check (position in ('director', 'cast'))
+  7  );
+
+Table created.
+
+SQL> 
+SQL> insert into CrewMember (fname, lname, position)
+  2  values ('albert', 'Juorio', 'cast');
+
+1 row created.
+
+SQL> 
+SQL> insert into CrewMember (fname, lname, position)
+  2  values ('Bryan', 'Bellin', 'director');
+
+1 row created.
+
+SQL> 
+SQL> insert into CrewMember (fname, lname, position)
+  2  values ('lauretta', 'Massey', 'director');
+
+1 row created.
+
+SQL> 
+SQL> insert into CrewMember (fname, lname, position)
+  2  values ('allie', 'Yashin', 'cast');
+
+1 row created.
+
+SQL> 
+SQL> insert into CrewMember (fname, lname, position)
+  2  values ('Felipa', 'Wolverson', 'cast');
+
+1 row created.
+
+SQL> select * from CrewMember;
+
+CREW_MEM_ID FNAME           LNAME           POSITION                                                                                                                                                                                                                                                        
+----------- --------------- --------------- ----------                                                                                                                                                                                                                                                      
+      10001 albert          Juorio          cast                                                                                                                                                                                                                                                            
+      10002 Bryan           Bellin          director                                                                                                                                                                                                                                                        
+      10003 lauretta        Massey          director                                                                                                                                                                                                                                                        
+      10004 allie           Yashin          cast                                                                                                                                                                                                                                                            
+      10005 Felipa          Wolverson       cast                                                                                                                                                                                                                                                            
+
+5 rows selected.
+
+SQL> spool off

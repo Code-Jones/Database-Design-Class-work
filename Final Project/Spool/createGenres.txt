@@ -1,0 +1,71 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createGenres.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the Genres Table	     */
+SQL> 
+SQL> /*  not done. select at the end*/
+SQL> 
+SQL> 
+SQL> create table genres (
+  2  genre_id			     number(5) GENERATED AS IDENTITY (START WITH 30001 INCREMENT BY 1),
+  3  genre			     varchar(30) constraint genre_genre_nn not null);
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Action');
+
+1 row created.
+
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Drama');
+
+1 row created.
+
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Thriller');
+
+1 row created.
+
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Sci-fiction');
+
+1 row created.
+
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Horror');
+
+1 row created.
+
+SQL> 
+SQL> insert into genres (genre)
+  2  values ('Comedy');
+
+1 row created.
+
+SQL> 
+SQL> /* select * from genres; */
+SQL> select * from genres;
+
+  GENRE_ID GENRE                                                                                                                                                                                                                                                                                            
+---------- ------------------------------                                                                                                                                                                                                                                                                   
+     30001 Action                                                                                                                                                                                                                                                                                           
+     30002 Drama                                                                                                                                                                                                                                                                                            
+     30003 Thriller                                                                                                                                                                                                                                                                                         
+     30004 Sci-fiction                                                                                                                                                                                                                                                                                      
+     30005 Horror                                                                                                                                                                                                                                                                                           
+     30006 Comedy                                                                                                                                                                                                                                                                                           
+
+6 rows selected.
+
+SQL> spool off

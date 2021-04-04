@@ -1,0 +1,73 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createCustomer.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the Customer Table     */
+SQL> 
+SQL> create table CUSTOMER (
+  2  Customer_ID	     number(5) GENERATED AS IDENTITY (START WITH 20001 INCREMENT BY 1),
+  3  Fname		     VARCHAR(20) CONSTRAINT CST_FNAME_NN NOT NULL,
+  4  LName		     VARCHAR(20) CONSTRAINT CST_LNAME_NN NOT NULL,
+  5  Phone		     NUMBER(7,4),
+  6  Email		     VARCHAR(20) CONSTRAINT CST_EMAIL_NN NOT NULL,
+  7  Password		     VARCHAR(20) CONSTRAINT CST_PASSWORD_NN NOT NULL,
+  8  Address		     VARCHAR(25),
+  9  City		     VARCHAR(20),
+ 10  Postal_Code	     VARCHAR(15),
+ 11  CCType		     CHAR(2)	     CONSTRAINT CST_CCTYPE_NN NOT NULL,
+ 12  CCNumber		     NUMBER(16)      CONSTRAINT CST_NUMBER_NN NOT NULL,
+ 13  constraint customer_email_uk unique (email),
+ 14  constraint customer_postal_code_ck check ((REGEXP_LIKE(postal_code, '[A-Z][0-9][A-Z]-[0-9][A-Z][0-9]'))),
+ 15  constraint customer_ccnumber_uk unique (ccnumber),
+ 16  constraint customer_cctype_ck check (cctype IN ('AX', 'MC', 'VS'))
+ 17  );
+
+Table created.
+
+SQL> 
+SQL> INSERT INTO CUSTOMER (FNAME, LNAME, PHONE, EMAIL, PASSWORD, ADDRESS, CITY, POSTAL_CODE, CCTYPE, CCNUMBER)
+  2  VALUES ('EDGARDO', 'DULLARD', 726.9455, 'EBENNEDSE@TAOBAO.COM', 'N9RIEE5PG','12 BLUEST_POINT', 'CALGARY', 'T3F-5G2', 'AX', 5602250043566150);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO CUSTOMER (FNAME, LNAME, PHONE, EMAIL, PASSWORD, ADDRESS, CITY, POSTAL_CODE, CCTYPE, CCNUMBER)
+  2  VALUES ('ANN', 'STEPHA', 546.6455, 'ADULSON0@TINYPIC.COM', 'VVJVZOYRHGOX','9 MALLARD HILL', 'NEW YORK', 'T4T-5H2', 'MC', 358804485401234);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO CUSTOMER (FNAME, LNAME, PHONE, EMAIL, PASSWORD, ADDRESS, CITY, POSTAL_CODE, CCTYPE, CCNUMBER)
+  2  VALUES ('STEPHA', 'DULSON', 221.5455, 'SFIDELUS1@ZDNET.COM', 'JEFNOVMLLGB','0 TENNYSON PARK', 'REGINA', 'H6R-5K8', 'VS', 3545644854010760);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO CUSTOMER (FNAME, LNAME, PHONE, EMAIL, PASSWORD, ADDRESS, CITY, POSTAL_CODE, CCTYPE, CCNUMBER)
+  2  VALUES ('PATRICE', 'BOSMA', 913.9753, 'PBOSMA2@BAIDU.COM', 'TVVVUGZK9DUR','39535 SPOHN AVENUE', 'HOPE', 'U5M-6H6', 'AX', 3584567854010760);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO CUSTOMER (FNAME, LNAME, PHONE, EMAIL, PASSWORD, ADDRESS, CITY, POSTAL_CODE, CCTYPE, CCNUMBER)
+  2  VALUES ('YEVETTE', 'PERFECT', 573.1235, 'YPERFECT3@YALE.EDU', 'XUPH6EOK1M','61 NORTHVIEW PARKWAY', 'NO HOPE', 'I7T-8K8', 'MC', 3588044987410760);
+
+1 row created.
+
+SQL> select * from customer;
+
+CUSTOMER_ID FNAME                LNAME                     PHONE EMAIL                PASSWORD             ADDRESS                   CITY                 POSTAL_CODE     CC   CCNUMBER                                                                                                                     
+----------- -------------------- -------------------- ---------- -------------------- -------------------- ------------------------- -------------------- --------------- -- ----------                                                                                                                     
+      20001 EDGARDO              DULLARD                726.9455 EBENNEDSE@TAOBAO.COM N9RIEE5PG            12 BLUEST_POINT           CALGARY              T3F-5G2         AX 5.6023E+15                                                                                                                     
+      20002 ANN                  STEPHA                 546.6455 ADULSON0@TINYPIC.COM VVJVZOYRHGOX         9 MALLARD HILL            NEW YORK             T4T-5H2         MC 3.5880E+14                                                                                                                     
+      20003 STEPHA               DULSON                 221.5455 SFIDELUS1@ZDNET.COM  JEFNOVMLLGB          0 TENNYSON PARK           REGINA               H6R-5K8         VS 3.5456E+15                                                                                                                     
+      20004 PATRICE              BOSMA                  913.9753 PBOSMA2@BAIDU.COM    TVVVUGZK9DUR         39535 SPOHN AVENUE        HOPE                 U5M-6H6         AX 3.5846E+15                                                                                                                     
+      20005 YEVETTE              PERFECT                573.1235 YPERFECT3@YALE.EDU   XUPH6EOK1M           61 NORTHVIEW PARKWAY      NO HOPE              I7T-8K8         MC 3.5880E+15                                                                                                                     
+
+5 rows selected.
+
+SQL> 
+SQL> spool off

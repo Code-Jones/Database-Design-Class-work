@@ -1,0 +1,36 @@
+
+                        Total Customer Rentals                        
+                                                                      
+                                                                      
+Customer Name             Favorite Titles                Rental Price 
+------------------------- ------------------------------ ------------ 
+Patrice Bosma             Asterix Escape                        $1.99 
+                          Good Shepherd                         $6.99 
+                          Sideways                              $1.99 
+                          Takers Change                         $4.99 
+*************************                                ------------ 
+Cust Total                                                     $15.96 
+                                                                      
+Edgardo Dullard           The Guy                               $5.99 
+*************************                                ------------ 
+Cust Total                                                      $5.99 
+                                                                      
+Stepha Dulson             Contagion Blue Harvest                $4.99 
+                          Long Degrees                          $5.99 
+                          Sideways                              $0.99 
+                          Six Obelix: God Save Britannia        $3.99 
+                          The Father, Son And Talent            $4.99 
+*************************                                ------------ 
+Cust Total                                                     $20.95 
+                                                                      
+Yevette Perfect           Hi Rosenberg                          $0.99 
+                          The Guy                               $5.99 
+*************************                                ------------ 
+Cust Total                                                      $6.98 
+                                                                      
+Ann Stepha                Chicks And Trains                     $1.99 
+                          Contagion Blue Harvest                $3.99 
+                          Play For Me                           $6.99 
+*************************                                ------------ 
+Cust Total                                                     $12.97 
+                                                                      

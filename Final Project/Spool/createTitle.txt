@@ -1,0 +1,180 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createTitle.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the Title Table	     */
+SQL> 
+SQL> /*  not done. fix fk and select at the end*/
+SQL> 
+SQL> 
+SQL> create table title (
+  2  title_id			     number(5) GENERATED AS IDENTITY (START WITH 50001 INCREMENT BY 1),
+  3  genre_id			     number(5),
+  4  show_title 		     varchar(30) constraint title_show_title_nn not null,
+  5  runtime			     number(4)	     constraint title_runtime_nn not null,
+  6  available_on	     date	     constraint title_available_on_nn not null,
+  7  release_date	     date	     constraint title_release_date_nn not null,
+  8  avg_star_rating	     number(2,1),
+  9  class			     char(1),
+ 10  age_rating 		     varchar(3)      constraint title_age_rating_nn not null,
+ 11  rental_count	     number(7)	     default 0,
+ 12  constraint title_show_title_uk unique (show_title),
+ 13  constraint title_runtime_ck check (runtime > 0),
+ 14  constraint title_star_rating_ck check (avg_star_rating >= 0 and avg_star_rating <= 5.1)
+ 15  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30001' ,'Good Shepherd', 87, '31-Jan-2019' , '03-Jan-2020' ,4.2 ,'a','g');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30002' ,'Nekromantikto',170 ,'9-Sep-19' ,'2-Jun-20' , null ,'b','pg');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30003' ,'Doorway',173,'28-Apr-19' ,'5-Apr-20' ,3.5 ,'c','14a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30004' ,'Takers Change',159,'29-Jun-19' ,'9-Apr-20' ,2.1 ,'b','18a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30005' ,'Hi Rosenberg',157,'5-Sep-19'  ,'16-Dec-20' ,3.6 ,'c','r');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30001' ,'Quick D',200,'10-Dec-19'  ,'1-Apr-20' ,3.9 ,'a','r');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30003' ,'Lassie with', 114,'28-May-19' ,'6-Apr-20' ,2.1 ,'b','14a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30005' ,'Jimmy Live', 190,'15-Oct-19' ,'28-Sep-20' , 4.5,'c','pg');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30001' ,'The Guy', 72,'14-Jul-19' ,'27-Mar-20' ,2.2 ,'a','g');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30001' ,'Contagion Blue Harvest', 141,'12-Sep-19' ,'29-Mar-20' , 2.9,'b','18a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30001' ,'Chicks and Trains', 184,'3-Oct-19' ,'19-Mar-20' ,2.4 ,'c','r');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30004' ,'Long Degrees', 105,'10-Jun-19' ,'6-Mar-20' ,4.9 ,'a','14a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30004', 'The Father, Son and Talent', 132,'17-Jul-19' ,'30-Mar-20' ,2.0 ,'b' ,'18a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30004', 'Play for Me', 162,'14-Jun-19' ,'3-Feb-20' , null ,'a' ,'g');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30004', 'Asterix Escape', 189,'24-Sep-19' ,'17-Apr-20' ,1.5 ,'c' ,'r');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30003', 'Six Obelix: God Save Britannia',76,'8-Aug-19' ,'19-Aug-20' ,3.2 ,'b','pg');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30003', 'Racing of Separation', 170,'23-Aug-19' ,'8-Sep-20' , null ,'a' ,'pg');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30003', 'Sideways', 182,'27-Dec-19' ,'31-Mar-20' ,3.7 , 'c','r');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30002', 'Sharons Baby', 91 ,'18-Jun-19' ,'29-Apr-20' , null , 'b','14a');
+
+1 row created.
+
+SQL> 
+SQL> insert into title (genre_id, show_title, runtime, available_on, release_date, avg_star_rating, class, age_rating)
+  2  values ('30002', 'Great Excape The' , 71 ,'2-Sep-19','30-Jan-20' , 2.9 , 'a' ,'r');
+
+1 row created.
+
+SQL> 
+SQL> select * from title;
+
+  TITLE_ID   GENRE_ID SHOW_TITLE                        RUNTIME AVAILABLE RELEASE_D AVG_STAR_RATING C AGE RENTAL_COUNT                                                                                                                                                                                      
+---------- ---------- ------------------------------ ---------- --------- --------- --------------- - --- ------------                                                                                                                                                                                      
+     50001      30001 Good Shepherd                          87 31-JAN-19 03-JAN-20             4.2 a g              0                                                                                                                                                                                      
+     50002      30002 Nekromantikto                         170 09-SEP-19 02-JUN-20                 b pg             0                                                                                                                                                                                      
+     50003      30003 Doorway                               173 28-APR-19 05-APR-20             3.5 c 14a            0                                                                                                                                                                                      
+     50004      30004 Takers Change                         159 29-JUN-19 09-APR-20             2.1 b 18a            0                                                                                                                                                                                      
+     50005      30005 Hi Rosenberg                          157 05-SEP-19 16-DEC-20             3.6 c r              0                                                                                                                                                                                      
+     50006      30001 Quick D                               200 10-DEC-19 01-APR-20             3.9 a r              0                                                                                                                                                                                      
+     50007      30003 Lassie with                           114 28-MAY-19 06-APR-20             2.1 b 14a            0                                                                                                                                                                                      
+     50008      30005 Jimmy Live                            190 15-OCT-19 28-SEP-20             4.5 c pg             0                                                                                                                                                                                      
+     50009      30001 The Guy                                72 14-JUL-19 27-MAR-20             2.2 a g              0                                                                                                                                                                                      
+     50010      30001 Contagion Blue Harvest                141 12-SEP-19 29-MAR-20             2.9 b 18a            0                                                                                                                                                                                      
+     50011      30001 Chicks and Trains                     184 03-OCT-19 19-MAR-20             2.4 c r              0                                                                                                                                                                                      
+     50012      30004 Long Degrees                          105 10-JUN-19 06-MAR-20             4.9 a 14a            0                                                                                                                                                                                      
+     50013      30004 The Father, Son and Talent            132 17-JUL-19 30-MAR-20               2 b 18a            0                                                                                                                                                                                      
+     50014      30004 Play for Me                           162 14-JUN-19 03-FEB-20                 a g              0                                                                                                                                                                                      
+     50015      30004 Asterix Escape                        189 24-SEP-19 17-APR-20             1.5 c r              0                                                                                                                                                                                      
+     50016      30003 Six Obelix: God Save Britannia         76 08-AUG-19 19-AUG-20             3.2 b pg             0                                                                                                                                                                                      
+     50017      30003 Racing of Separation                  170 23-AUG-19 08-SEP-20                 a pg             0                                                                                                                                                                                      
+     50018      30003 Sideways                              182 27-DEC-19 31-MAR-20             3.7 c r              0                                                                                                                                                                                      
+     50019      30002 Sharons Baby                           91 18-JUN-19 29-APR-20                 b 14a            0                                                                                                                                                                                      
+     50020      30002 Great Excape The                       71 02-SEP-19 30-JAN-20             2.9 a r              0                                                                                                                                                                                      
+
+20 rows selected.
+
+SQL> spool off

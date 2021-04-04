@@ -1,0 +1,41 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createRefund.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the Refund Table	     */
+SQL> 
+SQL> /*  not done.  select at the end*/
+SQL> 
+SQL> 
+SQL> create table refund (
+  2  customer_id		     number(5),
+  3  rental_id				     number(5));
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> insert into refund (customer_id, rental_id)
+  2  values ('20001','40004');
+
+1 row created.
+
+SQL> 
+SQL> insert into refund (customer_id, rental_id)
+  2  values ('20005','40003');
+
+1 row created.
+
+SQL> select * from refund;
+
+CUSTOMER_ID  RENTAL_ID                                                                                                                                                                                                                                                                                      
+----------- ----------                                                                                                                                                                                                                                                                                      
+      20001      40004                                                                                                                                                                                                                                                                                      
+      20005      40003                                                                                                                                                                                                                                                                                      
+
+2 rows selected.
+
+SQL> spool off

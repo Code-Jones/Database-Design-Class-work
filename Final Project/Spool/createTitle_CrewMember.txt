@@ -1,0 +1,174 @@
+SQL> @"C:\CPRG250\Project\Table_Creation\createTitle_CrewMember.sql"
+SQL> /*      This file is used to build the title rental data
+SQL> base for Dave's Digital Rentals.
+SQL> 
+SQL> Created by    : Fernando Arenas and Matt Jones
+SQL> Date created  : 20/04/09
+SQL> 
+SQL> /*      Building the title_CrewMember Table     */
+SQL> 
+SQL> /*  not done. select at the end*/
+SQL> 
+SQL> 
+SQL> 
+SQL> create table title_CrewMember (
+  2  crew_mem_id		     number(5),
+  3  title_id			     number(5));
+
+Table created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10001','50001');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10002','50002');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10003','50003');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10004','50004');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10005','50005');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10001','50006');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10002','50007');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10003','50008');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10004','50009');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10005','50010');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10001','50011');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10002','50012');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10003','50013');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10004','50014');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10005','50015');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10001','50016');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10002','50017');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10003','50018');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10004','50019');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10005','50019');
+
+1 row created.
+
+SQL> 
+SQL> insert into title_CrewMember (crew_mem_id, title_id)
+  2  values ('10001','50019');
+
+1 row created.
+
+SQL> select * from Title_CrewMember;
+
+CREW_MEM_ID   TITLE_ID                                                                                                                                                                                                                                                                                      
+----------- ----------                                                                                                                                                                                                                                                                                      
+      10001      50001                                                                                                                                                                                                                                                                                      
+      10002      50002                                                                                                                                                                                                                                                                                      
+      10003      50003                                                                                                                                                                                                                                                                                      
+      10004      50004                                                                                                                                                                                                                                                                                      
+      10005      50005                                                                                                                                                                                                                                                                                      
+      10001      50006                                                                                                                                                                                                                                                                                      
+      10002      50007                                                                                                                                                                                                                                                                                      
+      10003      50008                                                                                                                                                                                                                                                                                      
+      10004      50009                                                                                                                                                                                                                                                                                      
+      10005      50010                                                                                                                                                                                                                                                                                      
+      10001      50011                                                                                                                                                                                                                                                                                      
+      10002      50012                                                                                                                                                                                                                                                                                      
+      10003      50013                                                                                                                                                                                                                                                                                      
+      10004      50014                                                                                                                                                                                                                                                                                      
+      10005      50015                                                                                                                                                                                                                                                                                      
+      10001      50016                                                                                                                                                                                                                                                                                      
+      10002      50017                                                                                                                                                                                                                                                                                      
+      10003      50018                                                                                                                                                                                                                                                                                      
+      10004      50019                                                                                                                                                                                                                                                                                      
+      10005      50019                                                                                                                                                                                                                                                                                      
+      10001      50019                                                                                                                                                                                                                                                                                      
+
+21 rows selected.
+
+SQL> spool off
